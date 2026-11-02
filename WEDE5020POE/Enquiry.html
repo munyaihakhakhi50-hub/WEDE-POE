@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+   <title>REDMAGIC | Customer Enquiries</title>
+
+<meta name="description"
+content="Contact REDMAGIC with questions about gaming smartphones,
+ laptops, tablets and available products.">
+
+    <link rel="stylesheet"
+          href="Style/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header>
+
+    <p>
+
+        <img src="IMAGES/images.jpeg"
+             alt="REDMAGIC Logo"
+             width="200">
+
+    </p>
+
+</header>
+
+
+
+<!-- =========================================
+     NAVIGATION
+     ========================================= -->
+
+<nav>
+
+    <p>
+
+        <a href="PoePart1.html">Home</a>
+        &nbsp; | &nbsp;
+
+        <a href="SmartPhones.html">SmartPhones</a>
+        &nbsp; | &nbsp;
+
+        <a href="PC Gaming.html">PC Gaming</a>
+        &nbsp; | &nbsp;
+
+        <a href="Tablets.html">Tablets</a>
+        &nbsp; | &nbsp;
+
+        <a href="enquiry.html">Enquiry</a>
+        &nbsp; | &nbsp;
+
+        <a href="about.html">About</a>
+        &nbsp; | &nbsp;
+
+        <a href="contact.html">Contact</a>
+        &nbsp; | &nbsp;
+
+        <a href="cart.html">🛒 Cart</a>
+
+    </p>
+
+</nav>
+
+
+<hr>
+
+
+<!-- =========================================
+     ENQUIRY INTRODUCTION
+     ========================================= -->
+
+<section class="purchase">
+
+    <h1>Product Enquiry</h1>
+
+    <p style="text-align: center; color: #cccccc;">
+
+        Have a question about a REDMAGIC product?
+        Complete the form below and our team will
+        get back to you.
+
+    </p>
+
+
+    <!-- =====================================
+         ENQUIRY FORM
+         ===================================== -->
+
+    <form id="enquiryForm">
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <section>
+
+            <h2>Personal Information</h2>
+
+            <p>
+
+                <label for="fullname">
+                    Full Name
+                </label>
+
+                <input type="text"
+                       id="fullname"
+                       name="fullname"
+                       placeholder="Enter your full name"
+                       required>
+
+            </p>
+
+
+            <p>
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="example@email.com"
+                       required>
+
+            </p>
+
+
+            <p>
+
+                <label for="phone">
+                    Telephone Number
+                </label>
+
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       placeholder="Enter your phone number"
+                       required>
+
+            </p>
+
+        </section>
+
+
+
+        <hr>
+
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <section>
+
+            <h2>Product Information</h2>
+
+
+            <p>
+
+                <label for="quantity">
+                    Number of Items
+                </label>
+
+                <input type="number"
+                       id="quantity"
+                       name="quantity"
+                       min="1"
+                       max="25"
+                       value="1"
+                       required>
+
+            </p>
+
+
+            <p>
+
+                <label for="eventdate">
+                    Preferred Date
+                </label>
+
+                <input type="date"
+                       id="eventdate"
+                       name="eventdate">
+
+            </p>
+
+
+
+            <!-- SMARTPHONES -->
+
+            <p>
+
+                <label for="phoneProduct">
+                    Smartphone
+                </label>
+
+                <select id="phoneProduct"
+                        name="phoneProduct">
+
+                    <option value="">
+                        Select a smartphone
+                    </option>
+
+                    <option value="REDMAGIC 10 PRO">
+                        REDMAGIC 10 PRO
+                    </option>
+
+                    <option value="REDMAGIC 10S PRO">
+                        REDMAGIC 10S PRO
+                    </option>
+
+                    <option value="REDMAGIC 11 PRO">
+                        REDMAGIC 11 PRO
+                    </option>
+
+                    <option value="REDMAGIC 11S PRO">
+                        REDMAGIC 11S PRO
+                    </option>
+
+                </select>
+
+            </p>
+
+
+
+            <!-- TABLETS -->
+
+            <p>
+
+                <label for="tabletProduct">
+                    Gaming Tablet
+                </label>
+
+                <select id="tabletProduct"
+                        name="tabletProduct">
+
+                    <option value="">
+                        Select a tablet
+                    </option>
+
+                    <option value="REDMAGIC Astra">
+                        REDMAGIC Astra
+                    </option>
+
+                    <option value="REDMAGIC Astra 2">
+                        REDMAGIC Astra 2
+                    </option>
+
+                    <option value="REDMAGIC Nova 2">
+                        REDMAGIC Nova 2
+                    </option>
+
+                </select>
+
+            </p>
+
+
+
+            <!-- LAPTOPS -->
+
+            <p>
+
+                <label for="laptopProduct">
+                    Gaming Laptop
+                </label>
+
+                <select id="laptopProduct"
+                        name="laptopProduct">
+
+                    <option value="">
+                        Select a laptop
+                    </option>
+
+                    <option value="REDMAGIC Titan 16 PRO">
+                        REDMAGIC Titan 16 PRO
+                    </option>
+
+                    <option value="REDMAGIC Blaze 16 PRO">
+                        REDMAGIC Blaze 16 PRO
+                    </option>
+
+                </select>
+
+            </p>
+
+        </section>
+
+
+
+        <hr>
+
+
+
+        <!-- ADDITIONAL SERVICES -->
+
+        <section>
+
+            <h2>Additional Services</h2>
+
+
+            <p>
+
+                <input type="checkbox"
+                       id="delivery"
+                       name="services"
+                       value="delivery">
+
+                <label for="delivery">
+                    Delivery
+                </label>
+
+            </p>
+
+
+            <p>
+
+                <input type="checkbox"
+                       id="customdesign"
+                       name="services"
+                       value="customdesign">
+
+                <label for="customdesign">
+                    Custom Design
+                </label>
+
+            </p>
+
+        </section>
+
+
+
+        <hr>
+
+
+
+        <!-- MESSAGE -->
+
+        <section>
+
+            <h2>Additional Information</h2>
+
+            <p>
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea id="message"
+                          name="message"
+                          rows="6"
+                          placeholder="Tell us what you would like to know..."
+                          required></textarea>
+
+            </p>
+
+        </section>
+
+
+
+        <!-- SUBMIT -->
+
+        <p style="text-align: center;">
+
+            <button type="submit"
+                    class="buy-button">
+
+                Submit Enquiry
+
+            </button>
+
+        </p>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div id="successMessage"
+             style="display: none;
+                    text-align: center;
+                    padding: 20px;
+                    margin-top: 20px;
+                    border: 1px solid #e60000;
+                    border-radius: 8px;
+                    background: #120000;">
+
+            <h2>✓ Enquiry Submitted</h2>
+
+            <p>
+                Thank you for contacting REDMAGIC.
+                We will get back to you soon.
+            </p>
+
+        </div>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    <img src="IMAGES/logo2.png"
+         alt="REDMAGIC Logo"
+         width="200">
+
+    <p>
+
+        &copy; 2026 REDMAGIC.
+        All rights reserved.
+
+    </p>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
+<script>
+
+const enquiryForm =
+    document.getElementById("enquiryForm");
+
+const successMessage =
+    document.getElementById("successMessage");
+
+
+enquiryForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        successMessage.style.display = "block";
+
+
+        successMessage.scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+        enquiryForm.reset();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+```

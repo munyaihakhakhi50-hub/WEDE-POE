@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmation - REDMAGIC</title>
+
+    <link rel="stylesheet"
+          href="Style/style.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <img src="IMAGES/images.jpeg"
+         alt="REDMAGIC Logo"
+         width="200">
+
+</header>
+
+
+<nav>
+
+    <p>
+
+        <a href="PoePart1.html">Home</a>
+        &nbsp; | &nbsp;
+
+        <a href="SmartPhones.html">SmartPhones</a>
+        &nbsp; | &nbsp;
+
+        <a href="PC Gaming.html">PC Gaming</a>
+        &nbsp; | &nbsp;
+
+        <a href="Tablets.html">Tablets</a>
+
+    </p>
+
+</nav>
+
+<hr>
+
+
+<section class="purchase">
+
+    <div class="selected-product">
+
+        <h1>🎉 Order Confirmed!</h1>
+
+        <h2>Thank you for your purchase.</h2>
+
+        <p>
+            Your REDMAGIC order has been successfully placed.
+        </p>
+
+        <h2 id="orderNumber"></h2>
+
+    </div>
+
+
+    <div id="orderItems"></div>
+
+
+    <div class="selected-product">
+
+        <h2>Total</h2>
+
+        <p id="orderTotal"></p>
+
+        <a href="PoePart1.html"
+           class="buy-button">
+
+            Return to Home
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <img src="IMAGES/logo2.png"
+         alt="REDMAGIC Logo"
+         width="200">
+
+    <p>
+        &copy; 2026 REDMAGIC. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+const cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+
+const orderNumber =
+    localStorage.getItem("orderNumber")
+    || "RM000000";
+
+
+document.getElementById("orderNumber").textContent =
+    "Order Number: " + orderNumber;
+
+
+let total = 0;
+
+
+const orderItems =
+    document.getElementById("orderItems");
+
+
+cart.forEach(item => {
+
+    const itemTotal =
+        item.price * item.quantity;
+
+
+    total += itemTotal;
+
+
+    const product = document.createElement("div");
+
+    product.className = "product";
+
+
+    product.innerHTML = `
+
+        <img
+            src="${item.image}"
+            alt="${item.name}"
+        >
+
+        <div class="text">
+
+            <h2>${item.name}</h2>
+
+            <p>
+                Quantity: ${item.quantity}
+            </p>
+
+            <p>
+                $${itemTotal.toFixed(2)}
+            </p>
+
+        </div>
+
+    `;
+
+
+    orderItems.appendChild(product);
+
+});
+
+
+document.getElementById("orderTotal").textContent =
+    "$" + total.toFixed(2);
+
+
+/* Clear cart after displaying order */
+
+localStorage.removeItem("cart");
+
+</script>
+
+
+</body>
+
+</html>

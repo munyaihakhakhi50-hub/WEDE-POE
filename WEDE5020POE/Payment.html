@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - REDMAGIC</title>
+
+    <link rel="stylesheet"
+          href="Style/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <img src="IMAGES/images.jpeg"
+         alt="REDMAGIC Logo"
+         width="200">
+
+</header>
+
+
+<nav>
+
+    <p>
+
+        <a href="PoePart1.html">Home</a>
+        &nbsp; | &nbsp;
+
+        <a href="SmartPhones.html">SmartPhones</a>
+        &nbsp; | &nbsp;
+
+        <a href="PC Gaming.html">PC Gaming</a>
+        &nbsp; | &nbsp;
+
+        <a href="Tablets.html">Tablets</a>
+        &nbsp; | &nbsp;
+
+        <a href="cart.html">Cart 🛒</a>
+
+    </p>
+
+</nav>
+
+<hr>
+
+
+<section class="purchase">
+
+    <h1>Payment</h1>
+
+
+    <div class="selected-product">
+
+        <h2>Order Total</h2>
+
+        <p id="paymentTotal">
+            $0.00
+        </p>
+
+    </div>
+
+
+    <form id="paymentForm">
+
+        <h2>Payment Information</h2>
+
+        <label for="cardName">
+            Name on Card:
+        </label>
+
+        <input
+            type="text"
+            id="cardName"
+            required
+        >
+
+        <br><br>
+
+
+        <label for="cardNumber">
+            Card Number:
+        </label>
+
+        <input
+            type="text"
+            id="cardNumber"
+            maxlength="19"
+            placeholder="0000 0000 0000 0000"
+            required
+        >
+
+        <br><br>
+
+
+        <label for="expiry">
+            Expiry Date:
+        </label>
+
+        <input
+            type="text"
+            id="expiry"
+            placeholder="MM/YY"
+            required
+        >
+
+        <br><br>
+
+
+        <label for="cvv">
+            CVV:
+        </label>
+
+        <input
+            type="text"
+            id="cvv"
+            maxlength="3"
+            placeholder="123"
+            required
+        >
+
+        <br><br>
+
+
+        <button type="submit">
+            Complete Demo Payment
+        </button>
+
+    </form>
+
+</section>
+
+
+<footer>
+
+    <img src="IMAGES/logo2.png"
+         alt="REDMAGIC Logo"
+         width="200">
+
+    <p>
+        &copy; 2026 REDMAGIC. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+const cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let total = 0;
+
+
+cart.forEach(item => {
+
+    total += item.price * item.quantity;
+
+});
+
+
+document.getElementById("paymentTotal").textContent =
+    "$" + total.toFixed(2);
+
+
+document.getElementById("paymentForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        window.location.href = "SmartPhones.html";
+
+        return;
+
+    }
+
+
+    const orderNumber =
+        "RM" + Math.floor(Math.random() * 900000 + 100000);
+
+
+    localStorage.setItem(
+        "orderNumber",
+        orderNumber
+    );
+
+
+    window.location.href =
+        "confirmation.html";
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>REDMAGIC | Purchase Your Gaming Device</title>
+
+<meta name="description"
+content="Explore REDMAGIC gaming products and continue to the
+ purchase page to select your preferred device.">
+
+    <link rel="stylesheet"
+          href="Style/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <p>
+        <img src="IMAGES/images.jpeg"
+             alt="REDMAGIC LOGO"
+             width="200">
+    </p>
+
+</header>
+
+
+<nav>
+
+    <p>
+
+        <a href="PoePart1.html">Home</a>
+        &nbsp; | &nbsp;
+
+        <a href="SmartPhones.html">SmartPhones</a>
+        &nbsp; | &nbsp;
+
+        <a href="PC Gaming.html">PC Gaming</a>
+        &nbsp; | &nbsp;
+
+        <a href="Tablets.html">Tablets</a>
+        &nbsp; | &nbsp;
+
+        <a href="enquiry.html">Enquiry</a>
+        &nbsp; | &nbsp;
+
+        <a href="about.html">About</a>
+        &nbsp; | &nbsp;
+
+        <a href="contact.html">Contact</a>
+        &nbsp; | &nbsp;
+
+        <a href="cart.html">🛒 Cart</a>
+
+    </p>
+
+</nav>
+
+
+<hr>
+
+
+<section class="purchase">
+
+    <h1>Complete Your Purchase</h1>
+
+
+    <!-- SELECTED PRODUCT -->
+
+    <div class="selected-product">
+
+        <img id="productImage"
+             src=""
+             alt="Selected Product"
+             width="300">
+
+
+        <h2 id="productName"></h2>
+
+
+        <p id="productPrice"></p>
+
+    </div>
+
+
+    <!-- CUSTOMER INFORMATION -->
+
+    <h2>Customer Information</h2>
+
+
+    <form id="purchaseForm">
+
+
+        <label for="name">
+            Full Name:
+        </label>
+
+        <br>
+
+        <input type="text"
+               id="name"
+               name="name"
+               required>
+
+        <br><br>
+
+
+        <label for="email">
+            Email:
+        </label>
+
+        <br>
+
+        <input type="email"
+               id="email"
+               name="email"
+               required>
+
+        <br><br>
+
+
+        <label for="phone">
+            Phone Number:
+        </label>
+
+        <br>
+
+        <input type="tel"
+               id="phone"
+               name="phone"
+               required>
+
+        <br><br>
+
+
+        <label for="address">
+            Delivery Address:
+        </label>
+
+        <br>
+
+        <textarea id="address"
+                  name="address"
+                  rows="4"
+                  required></textarea>
+
+        <br><br>
+
+
+        <button type="submit">
+            Continue to Payment
+        </button>
+
+
+    </form>
+
+</section>
+
+
+<script>
+
+
+// ======================================
+// PRODUCT INFORMATION
+// ======================================
+
+const products = {
+
+    "11spro": {
+        name: "REDMAGIC 11S PRO",
+        price: 799,
+        image: "images/11S PRO2.png"
+    },
+
+    "11air": {
+        name: "REDMAGIC 11 AIR",
+        price: 499,
+        image: "images/11 AIR.png"
+    },
+
+    "10pro": {
+        name: "REDMAGIC 10 PRO",
+        price: 999,
+        image: "images/10 PRO.png"
+    },
+
+    "10air": {
+        name: "REDMAGIC 10 AIR",
+        price: 499,
+        image: "images/10 AIR.png"
+    },
+
+    "astra2": {
+        name: "REDMAGIC Astra 2 Gaming Tablet",
+        price: 699,
+        image: "images/Astra 2 Tablet.png"
+    },
+
+    "astra": {
+        name: "REDMAGIC Astra Gaming Tablet",
+        price: 849,
+        image: "images/Astra Tablet.png"
+    },
+
+    "nova2": {
+        name: "REDMAGIC Nova 2 Gaming Tablet",
+        price: 649,
+        image: "images/nova Tablet.png"
+    },
+
+    "blaze16pro": {
+        name: "REDMAGIC Blaze 16 Pro",
+        price: 4210,
+        image: "images/Blaze 16 Pro.png"
+    },
+
+    "titan16pro": {
+        name: "REDMAGIC Titan 16 Pro",
+        price: 1699,
+        image: "images/Titan 16 pro.png"
+    }
+
+};
+
+
+// ======================================
+// GET PRODUCT FROM URL
+// ======================================
+
+const urlParams =
+    new URLSearchParams(window.location.search);
+
+const productID =
+    urlParams.get("product");
+
+const product =
+    products[productID];
+
+
+// ======================================
+// DISPLAY PRODUCT
+// ======================================
+
+if (product) {
+
+    document.getElementById("productName").textContent =
+        product.name;
+
+    document.getElementById("productPrice").textContent =
+        "Price: $" + product.price.toFixed(2);
+
+    document.getElementById("productImage").src =
+        product.image;
+
+    document.getElementById("productImage").alt =
+        product.name;
+
+}
+
+else {
+
+    document.getElementById("productName").textContent =
+        "Product not found";
+
+    document.getElementById("productPrice").textContent =
+        "";
+
+    document.getElementById("productImage").style.display =
+        "none";
+
+}
+
+
+// ======================================
+// FORM SUBMISSION
+// ======================================
+
+document.getElementById("purchaseForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        // Make sure a product was selected
+
+        if (!product) {
+
+            alert("Please select a valid product.");
+
+            return;
+
+        }
+
+
+        // Save customer information
+
+        const customer = {
+
+            name:
+                document.getElementById("name").value,
+
+            email:
+                document.getElementById("email").value,
+
+            phone:
+                document.getElementById("phone").value,
+
+            address:
+                document.getElementById("address").value
+
+        };
+
+
+        localStorage.setItem(
+            "customer",
+            JSON.stringify(customer)
+        );
+
+
+        // Save selected product to cart
+
+        let cart =
+            JSON.parse(localStorage.getItem("cart")) || [];
+
+
+        const existingProduct =
+            cart.find(item => item.id === productID);
+
+
+        if (existingProduct) {
+
+            existingProduct.quantity++;
+
+        }
+
+        else {
+
+            cart.push({
+
+                id: productID,
+
+                name: product.name,
+
+                price: product.price,
+
+                image: product.image,
+
+                quantity: 1
+
+            });
+
+        }
+
+
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
+        );
+
+
+        // Go to payment page
+
+        window.location.href =
+            "payment.html";
+
+    });
+
+
+</script>
+
+
+<footer>
+
+    <img src="IMAGES/logo2.png"
+         alt="REDMAGIC LOGO"
+         width="200">
+
+    <p>
+
+        &copy; 2026 REDMAGIC.
+        All rights reserved.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
